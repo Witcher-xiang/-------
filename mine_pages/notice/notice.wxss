@@ -1,0 +1,4 @@
+/* mine_pages/notice/notice.wxss */
+.bigTitle{
+  text-align: center;
+}

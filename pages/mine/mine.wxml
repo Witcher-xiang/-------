@@ -1,0 +1,42 @@
+<!--index.wxml-->
+
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image  class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+
+  </view>
+</view><!--这该死的区域-->
+      
+    <view class='list'>
+
+        <view class='line' catchtap='userData'>
+             <image src='/icon/mine_press.png'></image>
+             <text class='textLine'>用户信息</text>
+             <image  src='/icon/arrow.png'></image>
+        </view> 
+    <view class='horizon'></view>
+    
+    <view class='line' catchtap='address'>
+             <image src='/icon/location.png'></image>
+             <text class='textLine'>配送地址管理</text>
+             <image  src='/icon/arrow.png'></image>
+
+      </view> 
+    <view class='horizon'></view>
+
+    <view class='line' catchtap='notice'>
+      
+             <image src='/icon/information.png'></image>
+             <text class='textLine'>使用须知</text>
+             <image  src='/icon/arrow.png'></image>
+      
+      </view> 
+      <view class='horizon'></view>
+    
+</view>

@@ -1,0 +1,15 @@
+/* mine_pages/userData/userData.wxss */
+.headPortial{
+  width:200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.content{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.protial{
+  margin: 0 auto;
+}

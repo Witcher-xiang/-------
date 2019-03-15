@@ -1,0 +1,33 @@
+<!--pages/order/order.wxml-->
+<!--mine_pages/location/location.wxml-->
+<view>
+  
+
+  <view class='orderArea'>
+
+        
+
+
+  <view class='orderMessage'><text class='orderName'>订单信息</text></view>
+
+  <view class='simpleArea'>
+  <text class='front'>下单时间:</text>
+  <text class='time'> 2019-03-11 20:11:39</text>
+  </view>
+
+  <view class='simpleArea'>
+  <text class='front'>订单总价:</text>
+  <text class='time'> ￥45</text>
+  </view>
+  
+  <view class='simpleArea'>
+  <button class='btn'>详情</button>
+  </view>
+
+         
+ 
+  
+  </view>
+
+
+</view>

@@ -1,0 +1,24 @@
+<template name="classifyItem">
+
+ <view class="order" data-id="{{item.id}}" >
+    
+   
+    <view class='singleOrder' >
+    <image class='orderPicture' src='{{item.foodImage}}'      ></image>
+        <view class='textArea'>
+        <text class='foodName'>{{item.foodName}}</text>
+          <view class='number'>
+           <text class='price'>{{item.price}}</text>
+           <image class='minus' src='{{item.minus}}' catchtap='priceMinus'></image>
+           <view>{{number}}</view>
+           <image class='plus' src='{{item.plus}}' catchtap='pricePlus'></image>
+         </view>
+        </view>
+    </view>
+    
+  </view>
+
+
+
+    
+</template>

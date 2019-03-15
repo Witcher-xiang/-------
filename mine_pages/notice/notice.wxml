@@ -1,0 +1,4 @@
+<!--mine_pages/notice/notice.wxml-->
+<view class='bigTitle'>
+<text class='bigTitle'> 使用须知 </text>
+</view>

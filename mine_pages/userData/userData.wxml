@@ -1,0 +1,9 @@
+<!--mine_pages/userData/userData.wxml-->
+<view class="content">
+<view class="headPortial">
+<view class='protial'>
+<open-data  type="userAvatarUrl"></open-data>
+</view>
+</view>
+<open-data  type="userNickName"></open-data>
+</view>

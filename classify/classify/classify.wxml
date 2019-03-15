@@ -1,0 +1,65 @@
+<!--classify/classify/classify.wxml-->
+
+<view> 
+<view  class='a'> <!--这是a标签的view-->
+ <view class='position'>
+  <view class='topArea'>
+    <image class='topIcon' src='/images/cake.jpg'></image>
+    <view class='textArea'>
+    <text class='restruantName'>颐嘉餐厅</text>
+    <text class='shopHours'>门店营业时间：每天  10:00-22:00</text>
+    </view>
+  </view>
+  
+  <view class='occupyArea'>
+  <view class='leftNavigationBar'>
+    <view class="navigatBlock {{dataId==1?'selected':''}}"    catchtap='dumplain'><text>饺子</text></view>
+  <view class="navigatBlock {{dataId==2? 'selected':''}}" catchtap='fastFood'><text>快餐</text></view>
+  <view class="navigatBlock {{dataId==3? 'selected':''}}" catchtap='riceNoodles'>米线<text></text></view>
+  <view class="navigatBlock {{dataId==4? 'selected':''}}" catchtap='stewed'><text>卤菜</text></view>
+  </view>
+  </view>
+  </view> <!--这是a标签的view-->
+  </view>
+
+
+<block wx:for="{{post_key}}" wx:for-item="item" wx:for-index="idx" wx:key="id" >
+  
+   <view class="order" >
+    
+   
+    <view class='singleOrder' >
+    <image class='orderPicture' src='{{item.foodImage}}'      ></image>
+        <view class='textArea'>
+        <text class='foodName'>{{item.foodName}}</text>
+          <view class='number'>
+           <text class='price'>￥{{item.price}}</text>
+            
+           <image class='minus' data-id='{{item.id}}' src='{{item.minus}}' catchtap='priceMinus'></image>
+            <view wx:if="{{cart.list[idx]==null}}">
+            <view>{{0}}</view>
+            </view>
+            <view wx:else>
+           <view>{{cart.list[idx]}}</view>
+           </view>
+           <image class='plus' data-id='{{item.id}}' src='{{item.plus}}' catchtap='pricePlus'></image>
+         </view>
+        </view>
+    </view>
+    
+  
+  </view>
+</block>
+
+   
+  <view class='b'>
+    <view class="{{cart.count==0?   'cartBackgroundDisabled':'cartBackground'}}"> <image class='cartPress' src='/icon/cart_press.png'></image></view>
+    <view class='cartArea'>
+    <view class='totalMoney'>￥{{cart.total}}</view>
+    <view class="{{cart.count==0?'settlementDisabled':'settlement'}}"   catchtap='goToSettlement' >
+    <text>去结算</text>
+    </view>
+</view>
+</view>
+
+</view>

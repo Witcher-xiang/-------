@@ -1,0 +1,25 @@
+<!--mine_pages/location/location.wxml-->
+<view>
+  <view class='bottomArea' catchtap='addAdress'>
+  <image src='/icon/plus.png'></image>
+  <text>添加收货地址</text>
+  </view>
+
+  <view class='addressArea'>
+
+        
+
+  <view>
+  <text class='name'>{{addressInfo.name}}</text>
+  <text class='mobile'>{{addressInfo.mobile}}</text>
+
+  </view>
+  
+
+         
+  <view class='addressDetail'>{{addressInfo.totalDetail}}</view>
+  
+  </view>
+  <image class='image' src='/icon/moify.png'></image>
+
+</view>

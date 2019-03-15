@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<!--index.wxml-->
+<view>
+  <swiper indicator-dots='true' indicator-active-color='white'    indicator-color='hrey' autoplay='3000' >
+  <swiper-item>
+  <image  src='/images/noodles.jpg'></image>
+  </swiper-item>
+  <swiper-item>
+  <image src='/images/fastFood.jpg'></image>
+  </swiper-item>
+  <swiper-item>
+  <image src='/images/cake.jpg'></image>
+  </swiper-item>
+  </swiper>
+
+  <view class='orderArea'>
+  <image class='image' src='/images/noodles.jpg' catchtap='noodles'></image>
+  <image class='image' src='/images/cake.jpg' catchtap='noodles'></image>
+  </view>
+  <view class='orderArea'>
+  <image class='image' src='/images/rice.jpg' catchtap='noodles'></image>
+  <image class='image' src='/images/fastFood.jpg' catchtap='noodles'></image>
+  </view>
+</view>
