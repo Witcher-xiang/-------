@@ -4,43 +4,49 @@
     "pages/order/order",
     "pages/order/order-detail/order-detail",
     "pages/mine/mine",
+    "pages/rest/rest",
     "pages/logs/logs",
     "mine_pages/userData/userData",
     "mine_pages/location/location",
     "mine_pages/notice/notice",
     "classify/classify/classify",
     "classify/classify/classify-item/classify-item",
-    "classify/classify/classify-finish/classify-finish"
-    ],
-  "window":{
-    "backgroundTextStyle":"light",
+    "classify/classify/classify-finish/classify-finish",
+    "classify/classify/order-finish/order-finish",
+    "classify/classify/pay-finish/pay-finish",
+    "pages/mine/login/login"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "颐 嘉 餐 厅",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "list": [{
-      "pagePath": "pages/index/index",
-      "text": "首页",
-      "iconPath": "icon/index.png",
-      "selectedIconPath": "/icon/index_press.png"
-    },
-    {
-      "pagePath": "pages/order/order",
-      "text": "订单",
-      "iconPath": "icon/order.png",
-      "selectedIconPath": "icon/order_press.png"
-    },
-    {
-      "pagePath": "pages/mine/mine",
-      "text": "我的",
-      "iconPath": "icon/mine.png",
-      "selectedIconPath": "icon/mine_press.png"
-    }
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "icon/index.png",
+        "selectedIconPath": "/icon/index_press.png"
+      },
+      {
+        "pagePath": "classify/classify/classify",
+        "text": "菜单",
+        "iconPath": "icon/order.png",
+        "selectedIconPath": "icon/order_press.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "icon/mine.png",
+        "selectedIconPath": "icon/mine_press.png"
+      }
     ],
     "borderStyle": "white",
     "selectedColor": "#AB956D",
     "color": "#989898",
     "backgroundColor": "#F5F5F5"
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

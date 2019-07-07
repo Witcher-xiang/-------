@@ -1,0 +1,12 @@
+<!--pages/mine/login/login.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo }}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 点击登录 </button>
+    <block wx:else>
+      <image  class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <button  class='btn' bindtap='back'>请点击左上角返回按钮</button>
+    </block>
+  </view>
+  
+</view>

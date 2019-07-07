@@ -1,5 +1,6 @@
 // mine_pages/userData/userData.js
 
+const app = getApp()
 Page({
 
   /**
@@ -13,13 +14,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(app.globalData.userInfo)
+    this.setData({
+      userInfo: app.globalData.userInfo
+    }) 
     wx.login({
       success(res) {
-        console.log(res.code)
+       
         wx.getUserInfo({
           withCredentials:true,
           success:function(res){
-            console.log(res);
+           
           },
           fail:function(){
 

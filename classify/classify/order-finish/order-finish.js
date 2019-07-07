@@ -1,4 +1,4 @@
-// pages/order/order/order-detail.js
+// classify/classify/order-finish/order-finish.js
 Page({
 
   /**
@@ -7,20 +7,34 @@ Page({
   data: {
 
   },
+  confirmPay:function(){
+    wx.navigateTo({
+      url: '/classify/classify/pay-finish/pay-finish',
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
    
+    var that=this;
+    wx.getStorage({
+      key: 'arr',
+      success: function (res) {
+        
+        that.setData({
+           total:res.data.arrTotal
+        })
+      }
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
-  
+
   },
 
   /**

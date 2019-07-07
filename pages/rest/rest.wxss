@@ -1,0 +1,13 @@
+/* pages/rest/rest.wxss */
+.wholeArea{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  margin-top: 200rpx;
+}
+.wholeArea image{
+  width: 150rpx;
+  height: 150rpx;
+  margin-bottom: 30rpx;
+}

@@ -21,7 +21,7 @@
   </view>
   
   <view class='simpleArea'>
-  <button class='btn'>详情</button>
+  <button class='btn' bindtap='detail'>详情</button>
   </view>
 
          

@@ -1,0 +1,27 @@
+<!--classify/classify/order-finish/order-finish.wxml-->
+<view class='wholeArea'>
+  <view class='tital'>
+    收银台
+  </view>
+
+  <view class='countArea'>
+    <view class='payMoney'>支付金额</view>
+    <view class='money'>￥{{total}}.00</view>
+  </view>
+
+  <view class='payArea'>
+  <view class='payModel'>支付方式</view>
+      
+   
+   <view class='weiChatPay'> <image src='/icon/weChat.png'></image>微信支付
+   <image class='right' src='/icon/right.png'></image></view>
+      
+  </view>
+
+  <view class='buttonArea' bindtap='confirmPay'>
+    <button class='buttonStyle'>确认支付</button>
+  </view>
+
+  
+
+</view>

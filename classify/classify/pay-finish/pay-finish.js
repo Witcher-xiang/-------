@@ -1,4 +1,4 @@
-// pages/order/order/order-detail.js
+// classify/classify/pay-finish/pay-finish.js
 Page({
 
   /**
@@ -7,20 +7,26 @@ Page({
   data: {
 
   },
+  backIndex:function(){
+    wx.navigateBack({
+
+      delta: 4   //默认值是1
+
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
-  
+
   },
 
   /**

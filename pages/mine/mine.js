@@ -7,19 +7,19 @@ Page({
    
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
 
 
   address:function(){
       wx.navigateTo({
-        url: '/mine_pages/location/location',
+        url: '/pages/order/order',
       })
   },
 
   userData:function(){
+   
     wx.navigateTo({
-      url: '/mine_pages/userData/userData',
+      url: '/mine_pages/userData/userData' 
     })
    
   },
@@ -36,39 +36,61 @@ Page({
   //事件处理函数
  
   onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse) {
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
+   
+  },
+
+  /** 获取登录code与用户信息函数**/
+ 
+  getUserInfo: function (e) {
+    var that=this;
+    wx.login({
+      success: function(res) {
+        if (e.detail.userInfo){
+          var code = res.code;
+          wx.getUserInfo({
+            success: function (res) {
+              var iv = res.iv;
+              var encryptedData = res.encryptedData;
+              wx.request({
+                url: 'http://wechatapptest.natapp1.cc/wechat/user/login',
+                data: {
+                  iv: iv,
+                  encryptedData: encryptedData,
+                  code: code
+                },
+                method:"GET",
+                header: {
+                  'content-type': 'application/json' //默认值
+                },
+                success: function (res) {
+                 
+                }
+              })
+            }
+          })
+        app.globalData.userInfo = e.detail.userInfo
+        that.setData({
+          userInfo: e.detail.userInfo,
           hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
+          })
+         }
+        else{
+          that.setData({
+            hasUserInfo: false
+          })
+          wx.showModal({
+            title:"提示",
+            content:"为了更好的用户体验请同意授权哦~",
+            success:function(ress){
+              if(ress.confirm){
+                
+              }
+            }
           })
         }
-      })
-    }
-  },
-  getUserInfo: function (e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
+      } 
+    
+       })
+    
   }
 })

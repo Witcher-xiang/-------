@@ -1,65 +1,107 @@
 <!--classify/classify/classify.wxml-->
 
+<!--上方标题区域-->
 <view> 
-<view  class='a'> <!--这是a标签的view-->
+<view  class='a'> <!--这是a标签的view,这个是占位标签-->
  <view class='position'>
   <view class='topArea'>
     <image class='topIcon' src='/images/cake.jpg'></image>
-    <view class='textArea'>
-    <text class='restruantName'>颐嘉餐厅</text>
-    <text class='shopHours'>门店营业时间：每天  10:00-22:00</text>
-    </view>
+     <view class='textArea'>
+       <text class='restruantName'>颐嘉餐厅(香城学府内)</text>
+       <text class='shopHours' decode="{{true}}"  >￥10起送&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;30分钟送达&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;两公里内免费送达</text>
+       <text class='shopHours'>门店营业时间：每天  10:00-22:00</text>
+       
+      </view>
+     </view>
+   </view>
   </view>
-  
-  <view class='occupyArea'>
-  <view class='leftNavigationBar'>
-    <view class="navigatBlock {{dataId==1?'selected':''}}"    catchtap='dumplain'><text>饺子</text></view>
-  <view class="navigatBlock {{dataId==2? 'selected':''}}" catchtap='fastFood'><text>快餐</text></view>
-  <view class="navigatBlock {{dataId==3? 'selected':''}}" catchtap='riceNoodles'>米线<text></text></view>
-  <view class="navigatBlock {{dataId==4? 'selected':''}}" catchtap='stewed'><text>卤菜</text></view>
-  </view>
-  </view>
-  </view> <!--这是a标签的view-->
-  </view>
+    <!-- {{classifySeleted==classify.id?'active':''}}-->
+    <!--侧面分类区域-->
+  <scroll-view class="classify-container" style='height:{{selfHeight}}px' scroll-y="true"   
+  >
+    	<view class="classify {{classifySeleted=='data'+classify.id?'active':''}}" wx:for="{{post_classify}}" wx:for-item="classify"  wx:key="id" wx:for-index="idx" data-id='{{classify.id}}' bindtap="tapClassify">
+				<view class="name">{{classify.classifyName}}</view>
+			</view>
+		</scroll-view>
 
-
-<block wx:for="{{post_key}}" wx:for-item="item" wx:for-index="idx" wx:key="id" >
-  
-   <view class="order" >
-    
-   
-    <view class='singleOrder' >
-    <image class='orderPicture' src='{{item.foodImage}}'      ></image>
+    <!--正中间点菜区域-->
+   <scroll-view class="order" 
+   style='height:{{selfHeight}}px' 
+   scroll-y="true" bindscroll="onGoodsScroll" 
+   scroll-into-view="{{classifyViewed}}"
+    >
+    <view wx:for="{{post_classify}}" wx:for-item="classify" id="{{'data'+classify.id}}" wx:for-index="idx01" wx:key="key01">
+    	<view class="title" id='{{classifyViewed}}'>{{classify.classifyName}}</view>
+<block wx:for="{{post_key}}" wx:for-item="item" wx:for-index="idx" wx:key="key00"> 
+    <block wx:if="{{post_key[idx].categoryType==post_classify[idx01].categoryType}}"><!---->
+    <view class='singleOrder' > 
+    <image class='orderPicture' bindtap='introduce' src='{{item.foodImage}}' data-id='{{item.id}}'></image>
         <view class='textArea'>
-        <text class='foodName'>{{item.foodName}}</text>
+        <text class='foodName' bindtap='introduce' data-id='{{item.id}}'>{{item.foodName}}</text>
+        <text class='foodIntroduce'>{{item.introduce}}</text>
           <view class='number'>
            <text class='price'>￥{{item.price}}</text>
-            
-           <image class='minus' data-id='{{item.id}}' src='{{item.minus}}' catchtap='priceMinus'></image>
-            <view wx:if="{{cart.list[idx]==null}}">
+           <image class='minus' data-id='{{item.id}}' src='{{item.minus}}' bindtap='priceMinus'></image>
+            <view class='font' wx:if="{{cart.list[idx]==null}}">
             <view>{{0}}</view>
             </view>
             <view wx:else>
-           <view>{{cart.list[idx]}}</view>
+           <view class='font'>{{cart.list[idx]}}</view>
            </view>
-           <image class='plus' data-id='{{item.id}}' src='{{item.plus}}' catchtap='pricePlus'></image>
+           <image class='plus' data-id='{{item.id}}' src='{{item.plus}}' bindtap='pricePlus'></image>
          </view>
         </view>
     </view>
+     </block> <!----->
+  </block>
+  </view><!--第一个循环的view标签-->
+</scroll-view> 
     
-  
-  </view>
-</block>
-
-   
-  <view class='b'>
-    <view class="{{cart.count==0?   'cartBackgroundDisabled':'cartBackground'}}"> <image class='cartPress' src='/icon/cart_press.png'></image></view>
-    <view class='cartArea'>
-    <view class='totalMoney'>￥{{cart.total}}</view>
-    <view class="{{cart.count==0?'settlementDisabled':'settlement'}}"   catchtap='goToSettlement' >
-    <text>去结算</text>
+     <!--商品介绍弹窗-->
+   <view wx:if="{{showIntroduceStatus}}" class='showModle'>
+        <scroll-view  class='showModleScroll' bindtap='close'>
+        <view class='close'>X</view>
+          <image src='{{post_key[showId].foodImage}}'></image>
+          <view class='titleText'>{{post_key[showId].foodName}}</view>
+          <view class='pargrath'>
+          <view class='pargrathTitle'>食品描述:</view>
+          {{post_key[showId].introduce}}
+          </view>
+        </scroll-view>
     </view>
-</view>
-</view>
 
+
+  <!--隐藏购物车菜单-->
+   
+	<view class="cart-detail"wx:if='{{!showCartDetail && !(cart.count==0)}}'>
+  <!--style='display:{{(!showCartDetail||!cart.count)?"none":""}}'-->
+		<view class="mask01" catchtap='hideCartDetail'></view>
+		<view class="list">
+   
+     <scroll-view scroll-y="true" class='cartScroll'>
+			<view class="item" wx:for="{{cart.list}}" wx:for-index="id" wx:for-item="num" wx:key="id">
+				<view class="name">{{cart.listName[id]}}</view>
+				<view class="cartMoney">￥{{cart.listPrice[id]*cart.list[id]}}</view>
+				<view class="reduce" data-id="{{id}}" bindtap="priceMinus">-</view>
+				<view class="num">{{num}}</view>
+				<view class="add" data-id="{{id}}" bindtap="pricePlus">+</view>
+			</view>
+      </scroll-view>
+		</view>
+	</view>
+
+  <!--下方购物车结算区域-->
+  <view class='b'>
+     <view class="{{cart.count==0?   'cartBackgroundDisabled':'cartBackground'}}">
+       <image class='cartPress' bindtap="showCartDetail"  src='/icon/cart_press.png'></image>
+       <view class='count'>{{cart.count}}</view>
+      </view>
+    <view class='cartArea' bindtap="showCartDetail"   >
+    <view class='totalMoney'>￥{{cart.total}}</view>
+    <button  class="settlement {{cart.count?'':'disabled'}}" disabled="{{!cart.count}}"  catchtap='goToSettlement' >
+    <text>去结算</text>
+    </button>
+</view>
+</view>
+<view class='mask' bindtap='mask' wx:if='{{showIntroduceStatus}}'></view><!--遮罩层-->
 </view>

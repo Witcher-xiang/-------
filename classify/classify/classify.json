@@ -1,4 +1,10 @@
 {
-  "usingComponents": {}
-}
+  "usingComponents": {
+    
+  },
 
+  "backgroundTextStyle": "dark",
+  "navigationBarBackgroundColor": "#feb311",
+  "navigationBarTitleText": "颐 嘉 餐 厅",
+  "navigationBarTextStyle": "white"
+}

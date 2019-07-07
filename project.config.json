@@ -14,11 +14,13 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.6.1",
 	"appid": "wx90ecc0b07ed2c9ec",
-	"projectname": "Restruant01",
+	"projectname": "Restruant3.19%E5%A4%87%E4%BB%BD",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
 	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -37,7 +39,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 5,
 			"list": [
 				{
 					"id": -1,
@@ -51,6 +53,33 @@
 					"name": "订单细节",
 					"pathName": "pages/order/order-detail/order-detail",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "支付方式选择页面",
+					"pathName": "classify/classify/order-finish/order-finish",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "休息页面",
+					"pathName": "pages/rest/rest",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "判断支付是否成功",
+					"pathName": "classify/classify/pay-finish/pay-finish",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "授权页面",
+					"pathName": "pages/mine/login/login",
 					"scene": null
 				}
 			]

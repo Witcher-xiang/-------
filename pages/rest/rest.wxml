@@ -1,0 +1,6 @@
+<!--pages/rest/rest.wxml-->
+<view class='wholeArea'>
+<image src='/icon/sunny.png'></image>
+<text class='sorry'>不好意思啊~</text>
+<text>服务器正在维护...</text>
+</view>

@@ -1,0 +1,11 @@
+<!--classify/classify/pay-finish/pay-finish.wxml-->
+<view wx:if=""  class='wholeArea'>
+  <image class='image' src="/icon/payFail.png"></image>
+  <view class='payText'>支付失败</view>
+</view>
+
+<view class='wholeArea'>
+  <image class='image' src="/icon/right.png"></image>
+  <view class='payText'>支付成功</view>
+</view>
+  <button bindtap='backIndex' class='backIndex'>返回主页</button>

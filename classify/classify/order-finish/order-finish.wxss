@@ -1,0 +1,88 @@
+/* classify/classify/order-finish/order-finish.wxss */
+.wholeArea{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tital{
+  width: 100%;
+  height: 80rpx;
+  text-align: center;
+  background-color: rgb(231, 231, 231);
+  line-height: 80rpx;
+}
+.payArea{
+  width: 100%;
+  height: 200rpx;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  font-size: 48rpx;
+  
+  
+  margin-top: 40rpx;
+}
+.payArea image{
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 30rpx;
+  margin-right: 20rpx;
+}
+
+.buttonArea{
+    display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 130rpx;
+  position: fixed;
+  bottom: 0rpx;
+ 
+}
+.buttonStyle{
+  width: 90%;
+  height: 90rpx;
+  line-height: 90rpx;
+  background-color: rgba(255, 187, 0, 0.945);
+  color: rgb(243, 243, 243);
+  border-radius: 10rpx;
+}
+.money{
+  font-size: 58rpx;
+  margin-top:30rpx;
+   margin-left: -50rpx;
+}
+.payMoney{
+  font-size: 28rpx;
+  margin-top:50rpx;
+  
+}
+
+.countArea{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 300rpx;
+ background-color: white;
+}
+
+page{
+  background-color: rgb(245, 245, 245)
+}
+.weiChatPay{
+  height: 70rpx;
+  line-height: 70rpx;
+  margin-top: 20rpx;
+}
+.payModel{
+  font-size: 35rpx;
+  padding: 20rpx 0 20rpx 20rpx;
+  border-bottom: solid gainsboro 2rpx;
+}
+.right{
+ position: relative;
+ right: -335rpx;
+ top: 10rpx;
+ 
+}
+

@@ -1,35 +1,38 @@
 /* classify/classify/classify.wxss */
 .topArea{
   width: 1500rpx;
-  height: 300rpx;
+  height: 190rpx;
   display: flex;
   flex-direction: row;
   align-items: center;
     vertical-align: middle;
-  background-color: rgb(223, 189, 127);
+  background-color: rgb(254, 179, 17);
 
 }
 .a{
   width: 100%;
-  height: 300rpx;  /*a标签*/
+  height: 190rpx;  /*a标签*/
 }
 .topIcon{
-  width: 180rpx;
-  height: 180rpx;
-  border-radius: 10px;
-  margin-left: 50rpx;
-  margin-top: 50rpx;
-  margin-bottom: 30rpx;
-}
-.restruantName{
-  font-size: 46rpx;
-  margin-left: 20rpx;
-}
-.shopHours{
-  font-size: 26rpx;
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 20%;
   margin-left: 20rpx;
   margin-top: 30rpx;
-  color: rgb(228, 228, 228);
+  margin-bottom: 30rpx;
+  border: white solid 3rpx;
+}
+.restruantName{
+  font-size: 36rpx;
+  margin-left: 20rpx;
+  font-family: KaiTi;
+}
+.shopHours{
+  font-size: 23rpx;
+  margin-left: 15rpx;
+  margin-top: 15rpx;
+  color: rgb(255, 255, 255);
+  font-family: KaiTi;
 }
 .textArea{
   display: flex;
@@ -37,20 +40,24 @@
 }
 
 .leftNavigationBar{
-  width: 240rpx;
+  width: 200rpx;
   height: 100%;
-  display:flex;
+  display:block;
   flex-direction: column;
-    background-color: rgb(223, 189, 127);
+    
   position: fixed; /*利用position来填满整个屏幕*/
 }
 
 .navigatBlock{
+
+  height: 100rpx;
+  display: block;
+ 
   width: 240rpx;
   text-align: center;
   padding-bottom: 30rpx;
   padding-top: 30rpx;
-  color: rgb(245, 245, 245);
+  color: rgb(0, 0, 0);
 }
 .selected{
   width: 240rpx;
@@ -61,14 +68,19 @@
   background-color: white;
 }
 .order{
+	height: 100%;
+	background: #ffffff;
+	
   display: flex;
   flex-direction: row;
-  position: relative;
-  left: 240rpx;
+  position: absolute;
+  left: 165rpx;
+  margin-bottom: 80rpx;
+
 }/*一个整体菜单的排版*/
 .singleOrder{
-  width: 100%;
-  height: 200rpx;
+  width: 800rpx;
+  height: 180rpx;
   flex-direction: row;
   display: flex;
   align-items: center;
@@ -79,31 +91,45 @@
 }
 .foodName{
   font-size: 36rpx;
+  margin-bottom: 10rpx;
+  margin-left: 10rpx;
 }
 .price{
   font-size: 34rpx;
   color: red;
-  
+  margin-right: 5rpx;
 }
 .orderPicture{
   width: 200rpx;
   height: 150rpx;
-  margin:0 20rpx 0 20rpx;
+  margin:0 20rpx 0 30rpx;
 }
 
 .plus{
-  width: 40rpx;
-  height: 40rpx;
-  margin-left: 20rpx;
-  margin-right: 20rpx;
+  width: 43rpx;
+  height: 43rpx;
+  margin-left: 12rpx;
+  margin-right: 12rpx;
 }
 
 .minus{
-  width: 40rpx;
-  height: 40rpx;
-  margin-left: 20rpx;
-  margin-right: 20rpx;
+  width: 43rpx;
+  height: 43rpx;
+  margin-left: 100rpx;
+  margin-right: 12rpx;
 }
+
+.foodIntroduce{
+  width: 300rpx;
+  color: rgb(192, 192, 192);
+  margin-left: 10rpx;
+  font-size: 28rpx;
+    overflow:hidden;/*超出一行自动隐藏*/
+    text-overflow:ellipsis;/*文字隐藏后自动添加省略号*/
+    white-space:nowrap;  /*强制不换行*/
+}
+
+
 
 .number{
   display: flex;
@@ -115,27 +141,27 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 100rpx;
+  height: 80rpx;
   background-color: white;
   position: fixed;
   bottom: 0;
-  z-index: 21;
+  z-index: 2;
 }
 .cartPress{
-  width: 90rpx;
-  height: 90rpx;
+  width: 60rpx;
+  height: 60rpx;
   margin: 0 auto;
   position: relative;
-  left: 20rpx;
-  top: 20rpx;
+  left: 16rpx;
+  bottom: 6rpx;
 
 }
 .settlement{
   width: 200rpx;
-  height: 100rpx;
+  height: 80rpx;
   background-color: orange;
   color:white;
-  line-height: 100rpx;
+  line-height: 80rpx;
   text-align: center;
   font-size: 36rpx;
   margin-left: 320rpx;
@@ -145,37 +171,36 @@
   width: 10%;
   color: red;
   margin-left: 180rpx;
-  font-size: 46rpx;
- 
+  font-size: 42rpx;
 }
 .cartBackground{
-  width: 130rpx;
-  height: 130rpx;
+  width: 90rpx;
+  height: 90rpx;
   background: orange;
   border-radius: 50%;
   position: fixed;
-  z-index: 99;
+  z-index: 3;
   margin-left: 50rpx;
   line-height: 130rpx;
   bottom:30rpx;
 }
 .cartBackgroundDisabled{
-  width: 130rpx;
-  height: 130rpx;
+  width: 90rpx;
+  height: 90rpx;
   background: gray;
   border-radius: 50%;
   position: fixed;
-  z-index: 99;
+  z-index: 3;
   margin-left: 50rpx;
   line-height: 130rpx;
   bottom: 30rpx;
 }
 .settlementDisabled{
   width: 200rpx;
-  height: 100rpx;
+  height: 112rpx;
   background-color: grey;
   color:white;
-  line-height: 100rpx;
+  line-height: 112rpx;
   text-align: center;
   font-size: 36rpx;
   margin-left: 320rpx;
@@ -185,5 +210,193 @@
   z-index: 1;    /*这里使用了indx*/
 }
 .b{
-  z-index: 999999; 
+  z-index: 30; 
+}
+
+.font{
+  font-size: 42rpx;
+}
+
+
+
+
+
+
+
+
+
+.classify-container {
+	width: 165rpx;
+	background: #efefef;
+  	box-sizing: border-box;
+  margin-bottom: 80rpx;
+  height: 100%;
+  display: -webkit-flex;
+  position: absolute;
+}
+.classify-container .classify {
+	padding: 35rpx 30rpx;
+	text-align: center;
+	border-bottom: 1px dashed #aaa;
+}
+.classify-container .classify.active {
+	background: #fff;
+}
+.classify-container .classify .name {
+	display: inline-block;
+	font-size: 30rpx;
+	color: #646464;
+	line-height: 1.2;
+	text-align: left;
+	pointer-events: none;
+}
+.title {
+	padding:  25rpx;
+	color: #646464;
+	font-size: 30rpx;
+	line-height: 30rpx;
+	background: #f7f7f7;
+}
+
+/*隐藏滚动条*/
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.showModle{
+
+ position: fixed;
+ background: white;
+  width: 70%;
+  height:auto;
+  z-index: 99;
+  margin-left: 250rpx;
+   border-radius: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top:120rpx;
+  right: 100rpx;
+  padding-bottom: 100rpx;
+}
+.showModle image{
+  margin-left: 10%;
+  width: 80%;
+  height: 300rpx;
+ margin-top: 30rpx;
+}
+
+.showModle .showModleScroll .titleText{
+  text-align: center; 
+  font-size: 42rpx;
+  margin: 20rpx 20rpx;
+}
+.showModle .showModleScroll  .pargrath{
+  margin: 15rpx 15rpx 20rpx 30rpx;
+  font-size: 28rpx;
+}
+.showModle .showModleScroll  .pargrathTitle{
+  color: orange;
+  margin-top: 20rpx;
+}
+.showModle .close{
+  position: relative;
+  left: 460rpx;
+  top: 20rpx;
+  width: 30rpx;
+  height: 50rpx;
+ 
+  font-size: 42rpx;
+}
+/*遮罩层*/
+.mask{
+  width:100%;
+  height:100%;
+  position:fixed;
+  background-color:rgb(41, 41, 41);
+  z-index:80;
+  top:0;
+  left:0;
+  opacity:0.3;
+}
+.count {
+	position: absolute;
+	left: 70rpx;
+	top: -10rpx;
+	font-size: 25rpx;
+	line-height: 40rpx;
+	padding: 0 10rpx;
+	color: #fff;
+	background: #f45044;
+	border-radius: 80%;
+}
+
+/*隐藏购物车*/
+.cart-detail, .cart-detail .mask01 {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+.cart-detail .mask01 {
+	background: rgba(0,0,0,0.7);
+  position: fixed;
+}
+.cart-detail .list {
+	position: fixed;
+	left: 0;
+	bottom: 80rpx;
+	width: 100%;
+	background: #f7f7f7;
+	padding: 30rpx 0;
+}
+.cart-detail .list .item {
+	display: -webkit-flex;
+	color: #333;
+	font-size: 36rpx;
+	line-height: 50rpx;
+	padding: 20rpx 40rpx;
+  margin-bottom: 20rpx;
+}
+.cart-detail .list .item .name {
+	-webkit-flex: 1;
+}
+.cart-detail .list .item .total {
+	width: 120rpx;
+}
+.cart-detail .list .item .reduce,
+.cart-detail .list .item .add {
+	font-size: 50rpx;
+	background: #feb70f;
+	width: 50rpx;
+	height: 50rpx;
+	text-align: center;
+	border-radius: 50%;
+}
+.cart-detail .list .item .num {
+	width: 50rpx;
+	text-align: center;
+	margin: 0 5rpx;
+}
+.cartMoney{
+  width: 10%;
+
+  position:relative;
+  right: 35rpx;
+  font-size: 40rpx;
+}
+.cartScroll{
+
+  height: 200px;
+  width: 100%;
+}
+.cartClassify{
+  height: 60rpx;
+  width: 100%;
+  background-color: gainsboro;
+}
+.page{
+  font-family: Microsoft YaHei ;
 }

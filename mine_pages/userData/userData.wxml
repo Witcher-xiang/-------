@@ -1,9 +1,37 @@
 <!--mine_pages/userData/userData.wxml-->
 <view class="content">
-<view class="headPortial">
-<view class='protial'>
-<open-data  type="userAvatarUrl"></open-data>
-</view>
-</view>
-<open-data  type="userNickName"></open-data>
+
+      <view class='topArea'>
+      <image  class="userinfo-avatar" src="{{userInfo.avatarUrl}}"         ></image>
+      </view>
+        
+    
+  <view class='message'>
+
+    <view class='singalMessage'>
+      <view>微信昵称: {{userInfo.nickName}}</view>
+      
+    </view>
+    <view class='horizon'></view>
+
+    
+    <view  class='singalMessage'>
+      <view wx:if="{{userInfo.nickName}}==1">性别: 男</view>
+      <view wx:elif="{{userInfo.nickName}}==2}">性别: 女</view>
+      <view wx:elif="{{userInfo.nickName}}==2||1}">性别: 保密</view>
+    </view>
+    <view class='horizon'></view>
+
+    
+     <view class='singalMessage'>
+      <view>国家: {{userInfo.country}}</view>
+      
+    </view>
+    <view class='horizon'></view>
+
+  </view>
+      
+ 
+    
+
 </view>

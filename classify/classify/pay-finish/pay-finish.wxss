@@ -1,0 +1,24 @@
+/* classify/classify/pay-finish/pay-finish.wxss */
+.wholeArea{
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+.payText{
+  font-size: 48rpx;
+  margin-top: 20rpx;
+}
+image{
+  margin-top: 100rpx;
+  width: 140rpx;
+  height: 140rpx;
+}
+.backIndex{
+  background-color: rgb(61, 193, 38);
+  width: 300rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+  color: white;
+  margin-top: 150rpx;
+ 
+}

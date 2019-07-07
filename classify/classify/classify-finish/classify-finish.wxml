@@ -1,2 +1,65 @@
 <!--classify/classify/classify-finish/classify-finish.wxml-->
-<text>classify/classify/classify-finish/classify-finish.wxml</text>
+<view class='wholeArea'>
+
+  <view class='address' bindtap='editAddress'>
+      <block wx:if="{{addressInfo}}">
+      <view class="contact-box">
+        <view>
+          <view class="contact">
+              <view>
+                
+                <text class="val">{{addressInfo.name}}</text>
+              </view>
+              <view class="mobile-box">
+                <text  class="val">{{addressInfo.mobile}}</text>
+              </view>
+          </view>
+          <view class="detail">{{addressInfo.totalDetail}}</view>
+        </view>
+
+        
+      </view>
+    </block>
+    <block wx:else>
+      <view class="add-new-address">
+        
+        <text>+添加地址</text>
+      </view>
+    </block>
+  </view>
+
+
+
+  <view class='orderArea'>
+
+    <view class='recipe'>
+       <view class='title'>
+       已点餐品 共{{count}}份
+       </view>
+      <block wx:for="{{postArray}}" wx:for-item="item"  wx:key="id" wx:for-index="idx" >
+      <view wx:if="{{postArray[idx]}}">
+      <!--这里添加一个if语句是为了防止循环空的对象-->
+         <view class='singalFood'>
+         <view>{{item.listImage[idx]}}</view>
+         <view>{{item.productName}}</view>
+         <view> x{{item.productQuanity}}</view>
+         <view class='float'>￥{{arrPrice[idx]*item.productQuanity}}</view>
+         </view>
+         </view><!--if语句末尾-->
+        </block>
+    </view>
+
+    <view class='bill'>
+      <view><text class='grey'> </text><text class='red'></text></view>
+      <view><text class='grey'>合计:</text><text class='red'>￥{{total}}</text></view>
+    </view> 
+  </view>
+
+  <view class='tip'>选择好地址才能提交订单哦~</view>
+
+  <view  class="confirmation" >
+    <view class='totalMoney'><text>￥{{total}}</text></view>
+    <view class='total'><text>{{count}} 份</text></view>
+    <button class="finallySettlement  {{addressInfo?'':'disabled'}}" bindtap="confirmPay" disabled="{{!addressInfo}}">提交订单</button>
+  </view>
+</view>
